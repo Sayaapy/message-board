@@ -3,20 +3,22 @@
     メッセージ一覧
   </div>
     
-  <div class="panel-body">
+  <div class="panel-body" >
     <% @messages.each do |message| %>
       <span class="label label-info"><%= message.name %></span>
       <%= message.body %>
-      <br>
+      <hr>
     <% end %>
+    
   </div>
 </div>
 
 <%= form_for(Message.new) do |f| %>
   名前:
-  <%= f.text_field :name %>
-
+  <%= f.text_field :name, class:"form-control" %>
+   <br/>
   内容:
-  <%= f.text_field :body %>
+  <%= f.text_area :body, class:'form-control' %>
+  <br/>
   <%= f.submit class: "btn btn-sm btn-primary" %>
 <% end %>
