@@ -31,12 +31,12 @@ class MessagesController < ApplicationController
   
   def destroy
     @message.destroy
-    redirect_to root_path, notice: "メッセ時を確認しました"
+    redirect_to root_path, notice: "メッセ-ジを確認しました"
   end
   
   private
   def message_params
-    params.require(:message).permit(:name, :body)
+    params.require(:message).permit(:name, :body, :age)
   end
   
   def set_message
